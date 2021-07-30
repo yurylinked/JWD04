@@ -7,6 +7,7 @@ class Calculator implements CalculatorInterface {
     @Override
     public void menu() {
         System.out.println(" ");
+        System.out.println("Hello human, let's start!");
         System.out.println("MAIN MENU");
         System.out.println("-----------");
         System.out.println("1. Addition");

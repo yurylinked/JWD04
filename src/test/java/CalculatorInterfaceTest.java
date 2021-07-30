@@ -48,8 +48,8 @@ public class CalculatorInterfaceTest {
         double result = a * b;
 
         double input = 4.4;
-        InputStream in = new ByteArrayInputStream(result);
-        System.setIn(in);
+      //  InputStream in = new ByteArrayInputStream(result);
+       // System.setIn(in);
 
         assertEquals(result, calculator.multiplication());
 

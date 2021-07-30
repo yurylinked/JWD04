@@ -4,6 +4,16 @@ class Calculator implements CalculatorInterface {
     Scanner num = new Scanner(System.in);
     double firstNum;
     double secondNum;
+
+    public void main() {
+        Scanner num = new Scanner(System.in);
+        while (true) {
+            menu();
+            String choice = num.nextLine();
+            computation(choice);
+        }
+    }
+
     @Override
     public void menu() {
         System.out.println(" ");

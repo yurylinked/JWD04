@@ -1,4 +1,5 @@
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -19,6 +20,12 @@ public class CalculatorInterfaceTest {
 
     @Test
     public void computation() {
+        Calculator calculator=new Calculator();
+
+        String input= "add 1";
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        System.setIn(in);
+        //assertEquals("add 1", calculator.computation("1"));
     }
 
     @Test
@@ -43,15 +50,16 @@ public class CalculatorInterfaceTest {
 
     @Test
     public void multiplication() {
-        double a = 2.2;
-        double b = 2.2;
-        double result = a * b;
 
-        double input = 4.4;
-      //  InputStream in = new ByteArrayInputStream(result);
-       // System.setIn(in);
+        String input = "add 2,2";
+        String input2 = "add 2,2";
+        Calculator calculator=new Calculator();
+        InputStream in = new ByteArrayInputStream(input.getBytes());
+        InputStream in2 = new ByteArrayInputStream(input2.getBytes());
+        System.setIn(in);
+        System.setIn(in2);
+        assertEquals("add 4,4", calculator.multiplication());
 
-        assertEquals(result, calculator.multiplication());
 
     }
 }

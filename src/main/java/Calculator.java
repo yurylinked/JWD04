@@ -70,11 +70,12 @@ class Calculator implements CalculatorInterface {
 
     @Override
     public void division() {
-        if (secondNum == 0) {
-            System.out.println("You cannot divide by Zero!");
-        } else {
+        hello();
+        if (secondNum !=0) {
             String result = String.format("%.3f",firstNum / secondNum);
             System.out.println("Division result: " + result);
+        } else {
+            System.out.println("You cannot divide by Zero!");
         }
     }
 

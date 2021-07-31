@@ -95,10 +95,6 @@ class Calculator implements CalculatorInterface {
             case 4:
                 division();
                 break;
-            case 5:
-                if (choiceNum == 5) {
-                    System.exit(0);
-                }
             default : System.exit(1);
         }
     }

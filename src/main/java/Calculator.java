@@ -95,7 +95,7 @@ class Calculator implements CalculatorInterface {
             case 4:
                 division();
                 break;
-            default : System.exit(1);
+            default : System.exit(0);
         }
     }
 }

@@ -1,3 +1,5 @@
+import java.io.InputStream;
+
 public interface CalculatorInterface {
     void setNumbers(String number1, String number2);
 
@@ -13,6 +15,12 @@ public interface CalculatorInterface {
 
     void division();
 
-    String multiplication();
+    void exponentiation();
+
+    void squareRoot();
+
+    void setNumbers(String number1);
+
+    void multiplication();
 
 }

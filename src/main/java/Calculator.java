@@ -24,9 +24,12 @@ class Calculator implements CalculatorInterface {
         System.out.println("2. Subtraction");
         System.out.println("3. Multiplication");
         System.out.println("4. Division");
-        System.out.println("5. Program exit");
+        System.out.println("5. SquareRoot");
+        System.out.println("6. Exponentiation");
+        System.out.println("7. Program exit");
         System.out.print("Please choose: ");
     }
+
 
     @Override
     public void hello() {
@@ -46,9 +49,15 @@ class Calculator implements CalculatorInterface {
     }
 
     @Override
+    public void setNumbers(String number1) {
+        String x = number1;
+        firstNum = Double.parseDouble(x);
+    }
+
+    @Override
     public void addition() {
         hello();
-        String result = String.format("%.3f",firstNum + secondNum);
+        String result = String.format("%.3f", firstNum + secondNum);
         System.out.println("Addition result: " + result);
 
     }
@@ -56,27 +65,42 @@ class Calculator implements CalculatorInterface {
     @Override
     public void substraction() {
         hello();
-        String result = String.format("%.3f",firstNum - secondNum);
+        String result = String.format("%.3f", firstNum - secondNum);
         System.out.println("Subtraction result: " + result);
     }
 
     @Override
-    public String multiplication() {
+    public void multiplication() {
         hello();
-        String result = String.format("%.3f",firstNum * secondNum);
+        String result = String.format("%.3f", firstNum * secondNum);
         System.out.println("Multiplication result: " + result);
-        return result;
     }
 
     @Override
     public void division() {
         hello();
-        if (secondNum !=0) {
-            String result = String.format("%.3f",firstNum / secondNum);
+        if (secondNum != 0) {
+            String result = String.format("%.3f", firstNum / secondNum);
             System.out.println("Division result: " + result);
         } else {
             System.out.println("You cannot divide by Zero!");
         }
+    }
+
+    @Override
+    public void squareRoot() {
+        System.out.print("Enter the number: ");
+        String fNum = num.nextLine();
+        setNumbers(fNum);
+        String result = String.format("%.3f", Math.sqrt(firstNum));
+        System.out.printf("The square root of " + firstNum + " equals " + result);
+    }
+
+    @Override
+    public void exponentiation() {
+        hello();
+        String result = String.format("%.3f", Math.pow(firstNum, secondNum));
+        System.out.printf("The number " + secondNum + " raised to the power of " + secondNum + "equals" + result);
     }
 
     @Override
@@ -95,7 +119,14 @@ class Calculator implements CalculatorInterface {
             case 4:
                 division();
                 break;
-            default : System.exit(0);
+            case 5:
+                squareRoot();
+                break;
+            case 6:
+                exponentiation();
+                break;
+            default:
+                System.exit(0);
         }
     }
 }
